@@ -31,7 +31,9 @@ const images = [
 const imagesElem = document.querySelector('.gallery');
 
 function imageTemplate(image) {
-  return '<li class="image-item">${image}</li>';
+  return `<li class="image-item">
+  <img src="${image.url}" alt="Image" width="300" height="300">
+  </li>`;
 }
 
 function renderImages () {
