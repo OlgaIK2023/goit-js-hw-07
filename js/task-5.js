@@ -6,12 +6,12 @@ function getRandomHexColor() {
 
 const body = document.querySelector('body');
 
-// let colorName = document.querySelector('.color');
+let colorName = document.querySelector('.color');
 
 const changeColorBtn = document.querySelector(".change-color");
 changeColorBtn.addEventListener('click', onBtnClick);
 
 function onBtnClick () {
   body.style.backgroundColor = getRandomHexColor();
-  colorName.innerHTML = '';
+  colorName.innerHTML = `red`;
 }
