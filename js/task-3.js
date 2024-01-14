@@ -1,2 +1,8 @@
 const inputBox = document.getElementById('name-input');
-console.log(inputBox);
+const greeting = document.getElementById('name-output');
+
+inputBox.addEventListener('input', onInputType);
+function onInputType () {
+    
+    greeting.innerHTML = inputBox.value;
+}
