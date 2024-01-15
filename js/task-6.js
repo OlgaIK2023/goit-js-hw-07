@@ -12,39 +12,48 @@ const squaresDiv = document.getElementById("boxes");
 createBtn.addEventListener("click", onCreateBtn);
 createBtn.addEventListener("click", onDestroyBtn);
 
-let squares = [];
-squares.push(inputBox.value);
-
-
-function squareTemplate(square) {
-let color = square.color;
-return `<div class = "square" style="background-color:${color}">
+function squareTemplate() {
+  const height = "30";
+  const width = "30";
+  let color = getRandomHexColor();
+  
+  return `<div class = "square" style="background-color:${color} height="${height}" width="${width}">
 </div>`;
 }
 
-function createSquares(amount) {
-  
-  for (let square of amount) {
-    let color = getRandomHexColor();
-    return `<div class = "square" style="background-color:${color}">
-</div>`; 
-     
-  }
+console.log(squareTemplate());
 
-  const squaresMarkup = squares.map(squareTemplate).join("");
-  squaresDiv.innerHTML = squaresMarkup;
+function createSquares(amount) {
+  let color = getRandomHexColor();
+  const height = 30;
+  const width = 30;
+
+  let heightNew = height+10;
+  let widthNew = width+10;
+  for (let i = 1; i < amount; i+=1) 
+  {
+  return `<div class = "square" style="background-color:${color} height="${heightNew}" width="${widthNew}">
+  </div>`
+  }
+  
 }
+
+  console.log(createSquares());
+  
+  
+//   const squaresMarkup = squares.map(squareTemplate).join("");
+//   squaresDiv.innerHTML = squaresMarkup;
+// }
 
 function onCreateBtn() {
   if (inputBox.value >= 1 && inputBox.value <= 100) {
-    
-    createSquares(inputBox.value);
+
+    createSquares();
   }
 
   inputBox.value = "";
 }
 
-function onDestroyBtn () {
-
+function onDestroyBtn() {
   squaresDiv.remove;
 }
