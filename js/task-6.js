@@ -13,5 +13,6 @@ const inputBox = document.querySelector('input');
 createBtn.addEventListener('click', onCreateBtn);
 
 function onCreateBtn () {
-  
+
+  inputBox.value = '';
 }
