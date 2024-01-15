@@ -12,24 +12,23 @@ const squaresDiv = document.getElementById("boxes");
 createBtn.addEventListener("click", onCreateBtn);
 
 let squares = [];
-// squares.push(inputBox.value);
-// console.log(squares);
+squares.push(inputBox.value);
 
-function squareTemplate(obj) {
-let color = obj.color;
 
+function squareTemplate(square) {
+let color = square.color;
 return `<div class = "square" style="background-color:${color}">
 </div>`;
 }
 
 function createSquares(amount) {
-  let color = getRandomHexColor();
+  
   for (let square of amount) {
-    return `<div class = "square" style="background-color:${color}">
-  </div>`;  
+    squareTemplate(square); 
+     
   }
 
-  const squaresMarkup = amount.map(squareTemplate).join("");
+  const squaresMarkup = squares.map(squareTemplate).join("");
   squaresDiv.innerHTML = squaresMarkup;
 }
 
