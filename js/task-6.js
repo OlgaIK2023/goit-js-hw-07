@@ -10,50 +10,37 @@ const inputBox = document.querySelector("input");
 const squaresDiv = document.getElementById("boxes");
 
 createBtn.addEventListener("click", onCreateBtn);
-createBtn.addEventListener("click", onDestroyBtn);
-
-function squareTemplate() {
-  const height = "30";
-  const width = "30";
-  let color = getRandomHexColor();
-  
-  return `<div class = "square" style="background-color:${color} height="${height}" width="${width}">
-</div>`;
-}
-
-console.log(squareTemplate());
+destroyBtn.addEventListener("click", onDestroyBtn);
 
 function createSquares(amount) {
-  let color = getRandomHexColor();
-  const height = 30;
-  const width = 30;
+  onDestroyBtn();
 
-  let heightNew = height+10;
-  let widthNew = width+10;
-  for (let i = 1; i < amount; i+=1) 
-  {
-  return `<div class = "square" style="background-color:${color} height="${heightNew}" width="${widthNew}">
-  </div>`
+  let startSize = 30;
+  const step = 10;
+  const squaresArray = [];
+
+  for (let i = 0; i < amount; i++) {
+    const newSquare = document.createElement("square");
+    newSquare.style.width = `${startSize}px`;
+    newSquare.style.height = `${startSize}px`;
+    newSquare.style.backgroundColor = getRandomHexColor();
+
+    squaresArray.push(newSquare);
+    startSize += step;
   }
-  
+
+  squaresDiv.append(...squaresArray);
 }
 
-  console.log(createSquares());
-  
-  
-//   const squaresMarkup = squares.map(squareTemplate).join("");
-//   squaresDiv.innerHTML = squaresMarkup;
-// }
-
 function onCreateBtn() {
-  if (inputBox.value >= 1 && inputBox.value <= 100) {
+  const amountSquares = Number(inputBox.value);
 
-    createSquares();
+  if (amountSquares >= 1 && amountSquares <= 100) {
+    inputBox.value = "";
+    createSquares(amountSquares);
   }
-
-  inputBox.value = "";
 }
 
 function onDestroyBtn() {
-  squaresDiv.remove;
+  squaresDiv.innerHTML = "";
 }
