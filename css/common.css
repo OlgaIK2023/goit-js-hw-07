@@ -31,3 +31,8 @@ img {
   max-width: 100%;
   object-fit: cover;
 }
+
+.square {
+  height: 30px;
+  width: 30px;
+}
