@@ -10,6 +10,7 @@ const inputBox = document.querySelector("input");
 const squaresDiv = document.getElementById("boxes");
 
 createBtn.addEventListener("click", onCreateBtn);
+createBtn.addEventListener("click", onDestroyBtn);
 
 let squares = [];
 squares.push(inputBox.value);
@@ -36,9 +37,14 @@ function createSquares(amount) {
 
 function onCreateBtn() {
   if (inputBox.value >= 1 && inputBox.value <= 100) {
-    // squares.push(inputBox.value);
+    
     createSquares(inputBox.value);
   }
 
   inputBox.value = "";
+}
+
+function onDestroyBtn () {
+
+  squaresDiv.remove;
 }
