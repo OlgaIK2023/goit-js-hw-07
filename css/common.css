@@ -36,3 +36,13 @@ img {
   height: 30px;
   width: 30px;
 }
+
+#boxes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px 30px;
+  margin-top: 30px;
+}

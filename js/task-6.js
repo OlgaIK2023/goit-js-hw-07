@@ -14,30 +14,38 @@ const squaresDiv = document.getElementById("boxes");
 createBtn.addEventListener('click', onCreateBtn);
 
 
+let squares = [];
+squares.push(inputBox.value);
+console.log(squares);
+
+
 function squareTemplate (obj) {
 
-  const color = obj.color;
-
-  return `<div class = "square" style="background=color: ${color}">
-  </div>`;
+  
+  let color = obj.color;
+  
+  return `<div class = "square" style="background-color:${color}">
+  </div>`
 
 };
 
-let squares = [];
 
-for (let squares >= 1 i++)
 
 
 function renderSquares () {
   const squaresMarkup = squares.map(squareTemplate).join('');
-  squaresElem.insertAdjacentHTML("beforeend", squaresMarkup);
+  squaresDiv.innerHTML = squaresMarkup;
 }
+
+
 
 
 
 
 function onCreateBtn () {
 if (inputBox.value >= 1 && inputBox.value <=100) {
+  
+  squares.push(inputBox.value);
   renderSquares();
 };
 
