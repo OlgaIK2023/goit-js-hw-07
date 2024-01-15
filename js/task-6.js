@@ -24,7 +24,9 @@ return `<div class = "square" style="background-color:${color}">
 function createSquares(amount) {
   
   for (let square of amount) {
-    squareTemplate(square); 
+    let color = getRandomHexColor();
+    return `<div class = "square" style="background-color:${color}">
+</div>`; 
      
   }
 
