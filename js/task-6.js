@@ -14,9 +14,11 @@ const squaresDiv = document.getElementById("boxes");
 createBtn.addEventListener('click', onCreateBtn);
 
 
-function squareTemplate () {
+function squareTemplate (obj) {
 
-  return `<div class = square>
+  const color = obj.color;
+
+  return `<div class = "square" style="background=color: ${color}">
   </div>`;
 
 };
