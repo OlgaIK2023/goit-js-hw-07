@@ -10,4 +10,8 @@ const inputBox = document.querySelector('input');
 
 
 
-createBtn.addEventListener("input", onInputType);
+createBtn.addEventListener('click', onCreateBtn);
+
+function onCreateBtn () {
+  
+}
